@@ -1,0 +1,12 @@
+{
+    "name": "vehicle_maintenance_project_backend",
+    "version": "0.0.0",
+    "private": true,
+    "type": "module",
+    "dependencies": {
+        "@dfinity/agent": "^0.19.2",
+        "@dfinity/candid": "^0.19.2",
+        "azle": "^0.17.1",
+        "uuid": "^9.0.0"
+    }
+}

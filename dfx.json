@@ -1,0 +1,32 @@
+{
+  "canisters": {
+    "vehicle_maintenance_project_backend": {
+      "build": "npx azle vehicle_maintenance_project_backend",
+      "root": "src",
+      "candid": "src/vehicle_maintenance_project_backend/vehicle_maintenance_project_backend.did",
+      "gzip": true,
+      "main": "src/vehicle_maintenance_project_backend/src/index.ts",
+      "ts": "src/vehicle_maintenance_project_backend/src/index.ts",
+      "type": "custom",
+      "wasm": ".azle/vehicle_maintenance_project_backend/vehicle_maintenance_project_backend.wasm"
+    },
+    "vehicle_maintenance_project_frontend": {
+      "dependencies": [
+        "vehicle_maintenance_project_backend"
+      ],
+      "source": [
+        "src/vehicle_maintenance_project_frontend/dist"
+      ],
+      "type": "assets",
+      "workspace": "vehicle_maintenance_project_frontend"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}

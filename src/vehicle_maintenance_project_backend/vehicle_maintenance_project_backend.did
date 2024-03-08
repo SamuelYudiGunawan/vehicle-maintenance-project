@@ -1,0 +1,30 @@
+type Maintenance = record {
+  id : text;
+  date : text;
+  name : text;
+  createdAt : nat64;
+  updatedAt : opt nat64;
+  typeVehicle : text;
+  price : float64;
+};
+type MaintenancePayload = record {
+  date : text;
+  name : text;
+  typeVehicle : text;
+  price : float64;
+};
+type _AzleResult = variant { Ok : Maintenance; Err : text };
+type _AzleResult_1 = variant { Ok : float64; Err : text };
+type _AzleResult_2 = variant { Ok : vec Maintenance; Err : text };
+service : () -> {
+  addMaintenance : (MaintenancePayload) -> (_AzleResult);
+  deleteMaintenance : (text) -> (_AzleResult);
+  getAveragePriceByName : (text) -> (_AzleResult_1) query;
+  getAveragePriceByType : (text) -> (_AzleResult_1) query;
+  getMaintenance : (text) -> (_AzleResult) query;
+  getMaintenances : () -> (_AzleResult_2) query;
+  getMaintenancesByName : (text) -> (_AzleResult_2) query;
+  getMaintenancesByType : (text) -> (_AzleResult_2) query;
+  greet : (text) -> (text) query;
+  updateMaintenance : (text, MaintenancePayload) -> (_AzleResult);
+}
